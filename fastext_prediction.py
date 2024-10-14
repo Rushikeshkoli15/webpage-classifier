@@ -143,11 +143,10 @@ def transform(url):
     # Predicting Result
     result1 = model.predict(text)
     result = result1[0][0]
-    if result == "__label__notporn":
-        print(0, "- Non Pornographic Site")
-        return "Non Pornographic Site"
-    elif result == "__label__porn":
-        print(1, "- Pornographic Site")
-        return "Pornographic Site"
+    if result == "__label__safe_site":
+        print(0, "the Site is safe....")
+        return "Safe Site"
+    elif result == "__label__not_safe":
+        print(1, "the Site is not safe...")
+        return "Not_Safe Site"
 
-# transform("https://www.supercartoons.net/cartoon/chaser-on-the-rocks/")
